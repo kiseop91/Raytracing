@@ -7,10 +7,13 @@
 color ray_color(const ray& r) {
     vec3 unit_direction = unit_vector(r.direction());
     float t = 0.5 * (unit_direction.y() + 1.0);
-    return color(1.0, 1.0, 1.0) + t * color(0.5, 0.7, 1.0);
+    return (1-t) * color(1.0, 1.0, 1.0) + t * color(0.5, 0.7, 1.0);
 }
 
 int main() {
+
+    std::ios_base::sync_with_stdio(false);
+    std::cout.tie(NULL);
 
     // Image
     const float aspect_ratio = 16.0 / 9.0;

@@ -8,8 +8,8 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 # 현재 디렉토리에 있는 모든 파일을 SRC_FILES 변수에 추가한다.
-file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS
-  ${CMAKE_CURRENT_SOURCE_DIR}/*.cc
+set(SRC_FILES
+  shape_test.cpp
 )
 
 add_executable(shape_test ${SRC_FILES})
